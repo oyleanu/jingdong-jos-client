@@ -2,9 +2,9 @@
 
 namespace Jos;
 
-class JdClient
+class JosClient
 {
-    public $serverUrl = "http://gw.api.360buy.net/routerjson";
+    public $serverUrl = "http://gw.api.360buy.com/routerjson";
 
     public $accessToken;
 
@@ -108,12 +108,12 @@ class JdClient
     {
         $localIp                   = isset($_SERVER["SERVER_ADDR"]) ? $_SERVER["SERVER_ADDR"] : "CLI";
         $logger                    = new JosLogger;
-        $logger->conf["log_file"]  = rtrim($this->logPath, '\\/') . '/' . "logs/jd/jos_comm_err_" . $this->appkey . "_" . date("Y-m-d") . ".log";
+        $logger->conf["log_file"]  = rtrim($this->logPath, '\\/') . '/' . "logs/jd/jos_comm_err_" . $this->appKey . "_" . date("Y-m-d") . ".log";
         $logger->conf["separator"] = "^_^";
         $logData                   = array(
             date("Y-m-d H:i:s"),
             $apiName,
-            $this->appkey,
+            $this->appKey,
             $localIp,
             PHP_OS,
             $this->version,
