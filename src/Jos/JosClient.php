@@ -4,7 +4,7 @@ namespace Jos;
 
 class JosClient
 {
-    public $serverUrl = "http://gw.api.360buy.com/routerjson";
+    public $serverUrl = "https://api.jd.com/routerjson";
 
     public $accessToken;
 
