@@ -137,6 +137,9 @@ class JosClient
 
         //获取业务参数
         $apiParams                        = $request->getApiParas();
+        if($apiParams == '[]'){
+            $apiParams = '';
+        }
         $sysParams[$this->json_param_key] = $apiParams;
 
         //签名
