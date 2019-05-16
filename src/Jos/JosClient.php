@@ -140,7 +140,7 @@ class JosClient
         if($apiParams == '[]'){
             $apiParams = '';
         }
-        $sysParams[$this->json_param_key] = $apiParams;
+        $post_data[$this->json_param_key] = $apiParams;
 
         //签名
         $sysParams["sign"] = $this->generateSign($sysParams);
@@ -151,7 +151,7 @@ class JosClient
         }
         //发起HTTP请求
         try {
-            $resp = $this->curl($requestUrl, $apiParams);
+            $resp = $this->curl($requestUrl, $post_data);
         } catch (\Exception $e) {
             $this->logCommunicationError($sysParams["method"], $requestUrl, "HTTP_ERROR_" . $e->getCode(), $e->getMessage());
             $result         = [];
